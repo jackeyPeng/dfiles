@@ -1,0 +1,5 @@
+192.168.1.3 - - [25/Apr/2021:23:54:03 +0800] "GET /upload.html HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:87.0) Gecko/20100101 Firefox/87.0"
+192.168.1.3 - - [25/Apr/2021:23:54:03 +0800] "GET /favicon.ico HTTP/1.1" 404 159 "http://192.168.1.6/upload.html" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:87.0) Gecko/20100101 Firefox/87.0"
+192.168.1.3 - - [17/May/2021:23:57:35 +0800] "GET /webui.html HTTP/1.1" 200 378 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+192.168.1.3 - - [17/May/2021:23:57:35 +0800] "GET /jquery-3.5.1.min.js HTTP/1.1" 200 89476 "http://192.168.1.6/webui.html" "Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+192.168.1.3 - - [17/May/2021:23:57:35 +0800] "GET /favicon.ico HTTP/1.1" 404 561 "http://192.168.1.6/webui.html" "Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
