@@ -27,7 +27,7 @@ local function SQL(fpath,code)
 	local db,err = mysql:new()
 	if not db then
 		print("\n...DB Init Error!\n")
-		return
+		return nil
 	end
 	db:set_timeout(10000)
 
@@ -41,7 +41,7 @@ local function SQL(fpath,code)
 
 	if not ok then
 		ngx.say("\nsql ERROR: "..err..",////")
-		return
+		return nil
 	end
 
 	local sql = "select fname from `t_files` where `fcode` = '"..code.."'"
@@ -51,7 +51,7 @@ local function SQL(fpath,code)
 	if not res then
 		ngx.header["ID_Error"] = "sql_error"
 		ngx.log(ngx.ERR, "\n----SQL not record.--------\n")
-		return
+		return nil
 	elseif #(res) > 0 then
 		local fname = res[1]["fname"]
 		ngx.log(ngx.ERR, "\n-----SQL ROW:-----\n",fname,"\n")
@@ -64,9 +64,10 @@ local asf = SQL("aa",code)
 --ngx.log(ngx.ERR,"\n---- file asf ----\n", asf,"\n")
 print("\n---- file asf : ", asf,"\n")
 
-if not asf then
+if asf == nil then
 	ngx.header["Content-Type"] = "text/plain"
-	ngx.print("\nError Code.\n")
+	print("\nError Code.\n")
+	template.render("download-error.html",{filenames=fs,codes=code})
 end
 
 print("\n..download: res: ",osfilepath.."/"..asf,"\n")
